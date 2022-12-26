@@ -4,6 +4,9 @@ import ws from "gulp-webserver";
 import gulpimage from "gulp-image";
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
+import concat from "gulp-concat";
+import inject from "gulp-inject";
+import path from "path";
 
 const sass = gulpSass(dartSass);
 
@@ -22,10 +25,37 @@ const routes = {
     src: "src/scss/style.scss",
     dest: "build/css",
   },
+  lib: {
+    src: "src/lib/**/*.js",
+    dest: "build/js",
+  },
+  js: {
+    src: "src/js/**/*.js",
+    dest: "build/js",
+  },
+  css: {
+    src: "src/css/**/*.css",
+    dest: "build/css",
+  },
 };
 
+/**
+ * HTML을 src => build로 폴더 이동
+ * task1. js, css를 inject 모듈을 이용하여 html 내부 안에 link,style 삽입
+ * @returns gulp
+ */
 const html = () => {
-  return gulp.src(routes.html.src).pipe(gulp.dest(routes.html.dest));
+  return gulp
+    .src(routes.html.src)
+    .pipe(inject(gulp.src(["./build/js/*.js", "./build/css/*.css"], { read: false }), { ignorePath: "build/" }))
+    .pipe(gulp.dest(routes.html.dest));
+};
+
+const js = () => {
+  return gulp.src(routes.js.src).pipe(gulp.dest(routes.js.dest));
+};
+const css = () => {
+  return gulp.src(routes.css.src).pipe(gulp.dest(routes.css.dest));
 };
 
 const image = () => gulp.src(routes.img.src).pipe(gulp.dest(routes.img.dest));
@@ -51,9 +81,18 @@ const watch = () => {
   gulp.watch(routes.sass.watch, style);
 };
 
-const prepare = gulp.series([clean, image]);
+const concatLibJs = () => gulp.src(routes.lib.src).pipe(concat("libs.js")).pipe(gulp.dest(routes.lib.dest));
 
-const assets = gulp.series([html, style]);
+// const injects = () => {
+//   return gulp
+//     .src("./build/index.html")
+//     .pipe(inject(gulp.src(["./build/js/*.js", "./build/css/*.css"], { read: false }), { ignorePath: "build/" }))
+//     .pipe(gulp.dest(routes.html.dest));
+// };
+
+const prepare = gulp.series([clean, image, concatLibJs]);
+
+const assets = gulp.series([style, css, js, html]);
 
 const postDev = gulp.parallel([webserver, watch]);
 
