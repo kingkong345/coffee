@@ -15,16 +15,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- inject:css -->
-    <link rel="stylesheet" href="/css/aos.css" />
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/customFullpage.css" />
-    <link rel="stylesheet" href="/css/fancybox.css" />
-    <link rel="stylesheet" href="/css/fullpage.css" />
-    <link rel="stylesheet" href="/css/jquery.fancybox.css" />
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/splitting.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/customFullpage.css">
+    <link rel="stylesheet" href="/css/fancybox.css">
+    <link rel="stylesheet" href="/css/fullpage.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/splitting.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/swiper-bundle.css">
     <!-- endinject -->
   </head>
   <body>
@@ -118,7 +118,7 @@
       <!-- category start -->
       <section id="category">
         <div class="container">
-          <div class="category-left">
+          <div class="category-half">
             <div class="left-bg">
               <p class="bg-item signature-bg"></p>
               <p class="bg-item beverage-bg hide"></p>
@@ -128,14 +128,14 @@
             <div class="category-btn">
               <p class="title">SELECTO MENU</p>
               <div class="category-btn-list">
-                <button>SIGNATURE</button>
-                <button>BEVERAGE</button>
-                <button>COFFEE</button>
-                <button>COOKIE</button>
+                <button class="signature">SIGNATURE</button>
+                <button class="beverage">BEVERAGE</button>
+                <button class="coffee">COFFEE</button>
+                <button class="cookie">COOKIE</button>
               </div>
             </div>
           </div>
-          <div class="category-right">
+          <div class="category-half">
             <div class="right-bg">
               <div class="category-title">
                 <div class="div1">
@@ -145,21 +145,21 @@
                     셀렉토에서 수 있는 셀렉토의 음료 라인업!
                   </p>
                 </div>
-                <div class="div2 hide">
+                <div class="div2">
                   <dt class="title">BEVERAGE</dt>
                   <dd class="desc">
                     고객의 라이프 스타일에 맞춰 더욱 다양하게<br />
                     즐길 수 있는 셀렉토의 음료 라인업!
                   </dd>
                 </div>
-                <div class="div3 hide">
+                <div class="div3">
                   <dt class="title">COFFEE</dt>
                   <dd class="desc">
                     셀렉토는 품질 좋은 원두를 선별해, 최적의 로스팅 포인트로 <br />
                     더욱 섬세하게 균형잡힌 풍미의 커피를 고객에게 선사합니다.
                   </dd>
                 </div>
-                <div class="div4 hide">
+                <div class="div4">
                   <dt class="title">COOKIE</dt>
                   <dd class="desc">남녀노소, 어디서나 맛있게! 셀렉토 시그니처 수제 쿠키</dd>
                 </div>
@@ -199,7 +199,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="category-item beverage div2 hide">
+                <div class="category-item beverage div2">
                   <div class="swiper">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
@@ -233,7 +233,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="category-item coffee div3 hide">
+                <div class="category-item coffee div3">
                   <div class="swiper">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
@@ -267,7 +267,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="category-item cookie div4 hide">
+                <div class="category-item cookie div4">
                   <div class="swiper">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
@@ -371,13 +371,13 @@
             <p class="img signature">
               <img src="../images/category/signature/c-signature-item-00.png" alt="" />
             </p>
-            <p class="img beverage hide">
+            <p class="img beverage">
               <img src="../images/category/beverage/c-beverage-item-00.png" alt="" />
             </p>
-            <p class="img coffee hide">
+            <p class="img coffee">
               <img src="../images/category/coffee/c-coffee-item-00.png" alt="" />
             </p>
-            <p class="img cookie hide">
+            <p class="img cookie">
               <img src="../images/category/cookie/c-cookie-item-00.png" alt="" />
             </p>
           </div>
@@ -582,8 +582,12 @@
       </div>
     </div>
 
-    <!-- inject:js -->
+    <!-- lib:js -->
     <script src="/js/libs.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <script src="/js/category.js"></script>
     <script src="/js/main.js"></script>
     <!-- endinject -->
   </body>

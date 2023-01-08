@@ -106,17 +106,3 @@ const btnTop = $(".btn-top");
 //   leftBg.show();
 //   console.log(leftBg);
 // });
-
-$(function () {
-  $(".category-btn").on("click", function () {
-    $(".div1").toggle("show");
-    $(".div2").toggle("show");
-    $(".div3").toggle("show");
-    $(".div4").toggle("show");
-    if ($(".category-item").css("display") == "none") {
-      $(".category-item").show();
-    } else {
-      $(".category-item").hide();
-    }
-  });
-});

@@ -30,6 +30,7 @@ const routes = {
     dest: "build/js",
   },
   js: {
+    watch: "src/js/**/*.js",
     src: "src/js/**/*.js",
     dest: "build/js",
   },
@@ -47,7 +48,8 @@ const routes = {
 const html = () => {
   return gulp
     .src(routes.html.src)
-    .pipe(inject(gulp.src(["./build/js/*.js", "./build/css/*.css"], { read: false }), { ignorePath: "build/" }))
+    .pipe(inject(gulp.src(["./build/js/libs.js"], { read: false }), { ignorePath: "build/", name: "lib" }))
+    .pipe(inject(gulp.src(["./build/js/*.js", "./build/css/*.css", "!./build/js/libs.js"], { read: false }), { ignorePath: "build/" }))
     .pipe(gulp.dest(routes.html.dest));
 };
 
@@ -79,6 +81,7 @@ const webserver = () => gulp.src("build").pipe(ws({ port: 5500, livereload: true
 const watch = () => {
   gulp.watch(routes.html.watch, html);
   gulp.watch(routes.sass.watch, style);
+  gulp.watch(routes.js.watch, js);
 };
 
 const concatLibJs = () => gulp.src(routes.lib.src).pipe(concat("libs.js")).pipe(gulp.dest(routes.lib.dest));
