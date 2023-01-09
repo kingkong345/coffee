@@ -5,14 +5,12 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-
     .category-half {
       width: calc(100% / 2);
       position: relative;
       height: 100%;
     }
   }
-
   .left-bg {
     .bg-item {
       width: 100%;
@@ -38,13 +36,11 @@
       }
     }
   }
-
   .category-btn {
     position: absolute;
     top: 8rem;
     left: 8rem;
     z-index: 5;
-
     .title {
       @include clampCal(33, 70);
       font-weight: 700;
@@ -56,14 +52,10 @@
       flex-direction: column;
       align-items: flex-start;
       button {
-        font-size: 2rem;
-        padding: 10px 0;
+        font-size: 1.5rem;
+        padding: 5px 0;
+        margin: 15px 0;
         color: #fff;
-
-        &.active {
-          border-bottom: 3px solid #fff;
-          font-weight: 500;
-        }
       }
     }
   }
@@ -75,13 +67,13 @@
     .category-title {
       padding-top: 120px;
       .title {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 700;
         color: $main-color;
         margin-bottom: 20px;
       }
       .desc {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: $main-color;
         line-height: 1.6;
       }
@@ -92,7 +84,6 @@
       letter-spacing: -0.5px;
       .category-item {
         margin: 50px 0;
-
         .swiper {
           margin-left: auto;
           margin-right: auto;
@@ -133,6 +124,34 @@
                 }
               }
             }
+          }
+        }
+      }
+    }
+    .category-deco {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $main-color;
+      letter-spacing: -0.5px;
+      .title {
+        border-bottom: 1px solid $main-color;
+        padding-bottom: 1.5rem;
+      }
+      .category-topping {
+        display: inline-flex;
+        .topping {
+          margin-top: 2rem;
+          margin-right: 1.5rem;
+          text-align: center;
+          img {
+            display: block;
+            width: 70px;
+            margin: 0 auto;
+          }
+          .desc {
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
           }
         }
       }
