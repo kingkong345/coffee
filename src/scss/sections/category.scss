@@ -23,7 +23,7 @@
       background-position: center;
       opacity: 1;
       &.signature-bg {
-        background-image: url(../images/category/c-signature-bg.png);
+        background-image: url(../images/category/c-signature-bg.jpg);
       }
       &.beverage-bg {
         background-image: url(../images/category/c-beverage-bg.png);
@@ -34,8 +34,15 @@
       &.cookie-bg {
         background-image: url(../images/category/c-cookie-bg.png);
       }
+      &.is-active {
+        -webkit-animation: 1s widthIn cubic-bezier(0.76, 0, 0.24, 1);
+        animation: 1s widthIn cubic-bezier(0.76, 0, 0.24, 1);
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
     }
   }
+
   .category-btn {
     position: absolute;
     top: 8rem;
@@ -54,7 +61,7 @@
       button {
         font-size: 1.5rem;
         padding: 5px 0;
-        margin: 15px 0;
+        margin: 10px 0;
         color: #fff;
       }
     }
@@ -169,5 +176,42 @@
         border: 0;
       }
     }
+  }
+}
+
+#count {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  color: $main-color;
+  .mask {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    .count-info {
+      width: 60%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@-webkit-keyframes widthIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes widthIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }
