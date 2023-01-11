@@ -188,13 +188,159 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    .count-info {
-      width: 60%;
+  }
+  .count-info {
+    width: 60%;
+    position: absolute;
+    height: 100%;
+    .count-list {
       position: absolute;
+      padding: 30px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: 888px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      .count-main-txt {
+        line-height: 1.2;
+        font-size: 60px;
+        font-weight: 700;
+      }
+      .count-sub-txt {
+        line-height: 1.5;
+        font-size: 18px;
+        margin: 50px 0;
+      }
+      .count-box {
+        border: 1px solid #ccc;
+        padding: 50px;
+        .count-box-txt {
+          font-size: 22px;
+          font-weight: 500;
+        }
+        .count-num {
+          font-size: 140px;
+          font-weight: 500;
+          padding: 20px 0;
+          span {
+            font-size: 40px;
+            text-transform: uppercase;
+          }
+        }
+        .count-date {
+          font-size: 18px;
+          opacity: 0.5;
+        }
+      }
+      .count-btn {
+        margin-top: 60px;
+        width: 194px;
+        height: 60px;
+        background-color: $main-color;
+        color: #fff;
+        font-size: 20px;
+        border-radius: 100px;
+      }
     }
+  }
+  .count-contents {
+    width: 40%;
+    height: 100%;
+    .circle-line {
+      position: absolute;
+      right: -1rem;
+      transform: translate(0, 50%);
+      width: 396px;
+      height: 792px;
+      border-top-left-radius: 470px;
+      border-bottom-left-radius: 470px;
+      border: 2px solid rgba(235, 86, 46, 0.4);
+      .inline-main {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 0;
+        width: 590px;
+        height: 590px;
+        display: block;
+        background-image: url(/src/images/count/m-4th_sec-main_con_1.png);
+        background-size: cover;
+        animation: main_con-change 5s ease-in-out infinite;
+      }
+      .inline-con {
+        position: absolute;
+        top: 0%;
+        left: 45%;
+        transform: translate(30%, -30%);
+        width: 130px;
+        height: 130px;
+        background-image: url(/src/images/count/m-4th_sec-con_1.png);
+        background-size: cover;
+        animation: con-change 5s ease-in-out infinite;
+      }
+      .inline-point {
+        position: absolute;
+        bottom: 0%;
+        left: 75%;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: $main-color;
+      }
+    }
+  }
+}
+
+#news {
+  width: 100%;
+  height: auto;
+  color: $main-color;
+  .mask {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-top: 1px solid rgba(111, 112, 112, 0.3);
+  }
+  .news-left {
+    width: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(111, 112, 112, 0.3);
+    .title {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      font-size: 100px;
+      font-weight: 700;
+    }
+    .contents-box {
+      position: absolute;
+      bottom: 0;
+      left: 80px;
+      transform: translate(0, 70%);
+      width: 186px;
+      height: 186px;
+      .direct-circle {
+        animation: circle-linear 3s linear infinite;
+        transition: 3s linear infinite;
+      }
+      .circle-txt {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+      }
+    }
+  }
+  .news-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -213,5 +359,54 @@
   }
   100% {
     width: 100%;
+  }
+}
+
+@-webkit-keyframes main_con-change {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes main_con-change {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes con-change {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes con-change {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes circle-linear {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
   }
 }
