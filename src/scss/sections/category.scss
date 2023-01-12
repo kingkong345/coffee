@@ -1,3 +1,5 @@
+@import "_webkit";
+
 #category {
   min-height: 100vh;
   .container {
@@ -266,7 +268,7 @@
         width: 590px;
         height: 590px;
         display: block;
-        background-image: url(/src/images/count/m-4th_sec-main_con_1.png);
+        background-image: url(../images/count/m-4th_sec-main_con_1.png);
         background-size: cover;
         animation: main_con-change 5s ease-in-out infinite;
       }
@@ -277,7 +279,7 @@
         transform: translate(30%, -30%);
         width: 130px;
         height: 130px;
-        background-image: url(/src/images/count/m-4th_sec-con_1.png);
+        background-image: url(/images/count/m-4th_sec-con_1.png);
         background-size: cover;
         animation: con-change 5s ease-in-out infinite;
       }
@@ -341,72 +343,43 @@
     width: 60%;
     display: flex;
     flex-direction: column;
-  }
-}
-
-@-webkit-keyframes widthIn {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes widthIn {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@-webkit-keyframes main_con-change {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes main_con-change {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@-webkit-keyframes con-change {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes con-change {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@-webkit-keyframes circle-linear {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 100%;
-  }
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
+    .right-contents {
+      position: relative;
+      padding: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(111, 112, 112, 0.3);
+      border-left: 1px solid rgba(111, 112, 112, 0.3);
+    }
+    .event-box-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 85%;
+      .event-info {
+        font-size: 18px;
+        opacity: 0.7;
+      }
+      .event-title {
+        font-size: 24px;
+        font-weight: 500;
+        margin: 15px 0 18px;
+      }
+      .event-date {
+        font-size: 16px;
+        opacity: 0.5;
+      }
+    }
+    .event-box-img {
+      position: absolute;
+      display: none;
+    }
+    .event-box-arrow {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 10%;
+    }
   }
 }
