@@ -59,3 +59,7 @@ $(function () {
     lastScrollTop = st;
   });
 });
+
+btnTop.on("click", function () {
+  gsap.to(window, { scrollTo: 0, duration: 1 });
+});
