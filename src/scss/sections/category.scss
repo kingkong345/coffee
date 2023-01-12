@@ -169,7 +169,8 @@
   .category-center-menu {
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 40%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
     .img {
       width: 440px;
@@ -224,12 +225,13 @@
           font-weight: 500;
         }
         .count-num {
+          padding: 20px 0;
           font-size: 140px;
           font-weight: 500;
-          padding: 20px 0;
-          span {
-            font-size: 40px;
-            text-transform: uppercase;
+          &::after {
+            content: "PACK";
+            margin-left: 20px;
+            font-size: 32px;
           }
         }
         .count-date {
@@ -300,6 +302,9 @@
   width: 100%;
   height: auto;
   color: $main-color;
+  .container {
+    width: 100%;
+  }
   .mask {
     width: 100%;
     height: 100%;
@@ -351,6 +356,11 @@
       justify-content: space-between;
       border-bottom: 1px solid rgba(111, 112, 112, 0.3);
       border-left: 1px solid rgba(111, 112, 112, 0.3);
+      &:hover {
+        .event-box-img > img {
+          opacity: 100%;
+        }
+      }
     }
     .event-box-info {
       display: flex;
@@ -373,13 +383,54 @@
     }
     .event-box-img {
       position: absolute;
-      display: none;
+      top: 0;
+      right: 20%;
+      height: 100%;
+      img {
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: all 0.25s ease;
+      }
     }
     .event-box-arrow {
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 10%;
+    }
+  }
+}
+
+#sns {
+  .container {
+    width: 100%;
+  }
+  .sns-title {
+    color: $main-color;
+    .title {
+      margin-top: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: 50px;
+        margin-left: 20px;
+        font-weight: 700;
+      }
+    }
+    .sns-img {
+      margin-bottom: 130px;
+      .img-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 70px 0;
+        img {
+          width: 20%;
+          margin: 10px;
+        }
+      }
     }
   }
 }

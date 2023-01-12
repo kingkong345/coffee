@@ -38,15 +38,19 @@ button {
   background-color: #fff;
   height: 100px;
   z-index: 999;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   .container {
     display: flex;
     justify-content: center;
-
     .utill {
       position: absolute;
       height: 100px;
       display: flex;
       right: 50px;
+      z-index: 3;
       ul {
         display: flex;
         align-items: center;
@@ -69,21 +73,23 @@ button {
     justify-content: center;
     width: 100%;
     height: 100px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     &.on {
       background-color: #fff;
-      height: 400px;
+      height: 500px;
+      .list li .depth02 {
+        pointer-events: auto;
+        opacity: 1;
+      }
     }
     .list {
       display: flex;
       transition: all 0.25s ease;
       li {
         color: $main-color;
-        &:hover {
-          .depth02 {
-            pointer-events: auto;
-            opacity: 1;
-          }
-        }
         .depth01 {
           padding: 0 60px;
           display: flex;
@@ -95,6 +101,10 @@ button {
         .depth02 {
           pointer-events: none;
           opacity: 0;
+          transition: all 0.2s ease;
+          -webkit-transition: all 0.2s ease;
+          -moz-transition: all 0.2s ease;
+          -o-transition: all 0.2s ease;
           li {
             padding: 20px 60px;
             font-size: 19px;
@@ -107,6 +117,7 @@ button {
   .logo {
     position: absolute;
     left: 50px;
+    z-index: 3;
     a {
       height: 100px;
       display: flex;
@@ -115,5 +126,86 @@ button {
         height: 50px;
       }
     }
+  }
+}
+
+#footer {
+  width: 100%;
+  background-color: $main-color;
+  color: #fff;
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .footer-logo {
+    margin: 80px 0 40px;
+  }
+  .footer-link {
+    margin-bottom: 40px;
+    img {
+      margin: 0 40px;
+    }
+  }
+  .footer-list {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  .footer-info {
+    font-size: 15px;
+    font-weight: 300;
+    address {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .infomation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .bar {
+      width: 1px;
+      height: 13px;
+      background-color: #fff;
+      margin-top: 2px;
+      opacity: 0.2;
+      margin: 0 10px;
+    }
+  }
+  .copyright {
+    font-size: 12px;
+    font-weight: 300;
+    margin: 120px 0 80px;
+  }
+}
+
+.btn-top {
+  position: absolute;
+  right: 80px;
+  text-align: center;
+  width: 80px;
+  z-index: 100;
+  .top {
+    margin-top: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .circle {
+      width: 60px;
+    }
+    .arrow {
+      width: 33px;
+      position: absolute;
+    }
+  }
+  span {
+    display: block;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 14px;
   }
 }
