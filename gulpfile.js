@@ -100,3 +100,5 @@ const assets = gulp.series([style, css, js, html]);
 const postDev = gulp.parallel([webserver, watch]);
 
 export const dev = gulp.series([prepare, assets, postDev]);
+
+export const build = gulp.series([prepare, assets]);
