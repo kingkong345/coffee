@@ -1,0 +1,222 @@
+@media all and (max-width: 1570px) {
+  .container {
+    width: 960px;
+  }
+  #header {
+    #gnb {
+      .list {
+        > li {
+          width: 150px;
+          .depth01 {
+            padding: 0 !important;
+          }
+          .depth02 {
+            > li {
+              padding: 20px 0px !important;
+              font-size: 16px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  #category {
+    .category-half {
+      .right-bg {
+        width: 490px;
+      }
+    }
+    .category-center-menu {
+      .img {
+        width: 350px;
+      }
+    }
+  }
+  #count {
+    .count-contents {
+      .circle-line {
+        width: 340px;
+        .inline-point {
+          left: 70%;
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 1280px) {
+  #header {
+    height: 70px !important;
+    .container {
+      .logo {
+        a {
+          height: 70px;
+          img {
+            height: 40px;
+          }
+        }
+      }
+      .utill {
+        display: none !important;
+      }
+      .btn-all {
+        margin-top: 15px;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        z-index: 3;
+        right: 50px;
+        cursor: pointer;
+        span {
+          width: 30px;
+          height: 2px;
+          position: absolute;
+          right: 5px;
+          transition: all 0.25s ease;
+          background-color: $main-color;
+          &:nth-child(1) {
+            top: 10px;
+          }
+          &:nth-child(2) {
+            top: 20px;
+          }
+          &:nth-child(3) {
+            top: 30px;
+          }
+        }
+        &.on {
+          width: 100%;
+          span {
+            background-color: $main-color;
+            &:nth-child(1) {
+              top: 20px;
+              transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+              top: 20px;
+              transform: translateX(-100px);
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              top: 20px;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+    #gnb {
+      display: none !important;
+    }
+  }
+  #category {
+    .container {
+      flex-wrap: wrap;
+      .category-half {
+        width: 100%;
+        .left-bg {
+          height: 70vh;
+          .bg-item {
+            height: 100%;
+          }
+        }
+        .category-btn {
+          left: 50%;
+          transform: translateX(-50%);
+          top: 5em;
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .category-btn-list {
+            display: flex;
+            flex-direction: row;
+            > button {
+              padding: 0;
+              margin: 0 20px;
+              font-size: 1.2em;
+            }
+          }
+        }
+        .right-bg {
+          width: 90%;
+          .category-deco {
+            font-size: 1.25em;
+          }
+        }
+      }
+      .category-center-menu {
+        display: none;
+      }
+    }
+  }
+  #count {
+    .mask {
+      .contents-box {
+        display: none;
+      }
+      .count-info {
+        width: 100%;
+      }
+      .count-contents {
+        display: none;
+      }
+    }
+  }
+  #news {
+    .mask {
+      flex-wrap: wrap;
+    }
+    .news-left {
+      width: 100%;
+      .contents-box {
+        display: none;
+        .title {
+          top: 50px;
+          transform: translateY(50%);
+        }
+      }
+    }
+    .news-right {
+      width: 100%;
+      margin-top: 20%;
+      border-top: 1px solid rgba(111, 112, 112, 0.3);
+      .right-contents {
+        &:hover {
+          .event-box-img > img {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  #sns {
+    .sns-title {
+      .title {
+        margin-top: 100px;
+      }
+      .sns-img {
+        margin-bottom: 100px;
+      }
+    }
+  }
+  #footer {
+    .footer-info {
+      address {
+        flex-direction: column;
+        .address-1 {
+          margin-bottom: 10px;
+        }
+        .bar {
+          display: none;
+        }
+      }
+    }
+  }
+  .btn-top {
+    .top {
+      .circle {
+        width: 50px !important;
+      }
+    }
+  }
+}

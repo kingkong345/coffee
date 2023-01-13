@@ -6,7 +6,6 @@
     position: relative;
     display: flex;
     width: 100%;
-    flex-wrap: wrap;
     .category-half {
       width: calc(100% / 2);
       position: relative;
@@ -44,14 +43,13 @@
       }
     }
   }
-
   .category-btn {
     position: absolute;
     top: 8rem;
     left: 8rem;
     z-index: 5;
     .title {
-      @include clampCal(33, 70);
+      @include clampCal(39, 60);
       font-weight: 700;
       color: #fff;
       margin-bottom: 0.5em;
@@ -199,17 +197,17 @@
     .count-list {
       position: absolute;
       padding: 30px;
-      top: 50%;
+      top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 888px;
+      width: 75%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: left;
       .count-main-txt {
         line-height: 1.2;
-        font-size: 60px;
+        @include clampCal(45, 60);
         font-weight: 700;
       }
       .count-sub-txt {
@@ -226,7 +224,7 @@
         }
         .count-num {
           padding: 20px 0;
-          font-size: 140px;
+          @include clampCal(120, 140);
           font-weight: 500;
           &::after {
             content: "PACK";
@@ -322,7 +320,7 @@
       position: absolute;
       top: 40px;
       left: 80px;
-      font-size: 100px;
+      @include clampCal(60, 100);
       font-weight: 700;
     }
     .contents-box {

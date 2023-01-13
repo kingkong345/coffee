@@ -8,6 +8,15 @@ const mainImg = new Swiper("#main-visual .mask", {
 const categoryBox = new Swiper("#category .category-box .swiper", {
   slidesPerView: 3,
   spaceBetween: 50,
+
+  breakpoints: {
+    640: {
+      spaceBetween: 10,
+    },
+    1280: {
+      spaceBetween: 20,
+    },
+  },
 });
 
 $(".count-num").each(function () {
@@ -60,6 +69,37 @@ $(function () {
   });
 });
 
-btnTop.on("click", function () {
-  gsap.to(window, { scrollTo: 0, duration: 1 });
+$(document).ready(function ($) {
+  const popup = $(".popup");
+  const popupClose = $(".popup01 .btn-close");
+  const onedayPopup = $(".popup01 .btn-oneday");
+
+  //최초 레이어팝업 노출
+  if (!$.cookie("testCookie")) {
+    popupShow();
+  }
+
+  //레이어팝업 닫기 버튼 클릭
+  popupClose.on("click", function () {
+    layerPopupHide(0);
+  });
+
+  //레이어팝업 오늘 하루 보지 않기 버튼 클릭
+  onedayPopup.on("click", function () {
+    layerPopupHide(1);
+  });
+
+  //레이어팝업 노출
+  function popupShow() {
+    popup.show();
+  }
+  //레이어팝업 비노출
+  function layerPopupHide(state) {
+    popup.hide();
+    if (state === 1) {
+      if ($.cookie("testCookie") == undefined) {
+        $.cookie("testCookie", "Y", { expires: 1, path: "/" });
+      }
+    }
+  }
 });
