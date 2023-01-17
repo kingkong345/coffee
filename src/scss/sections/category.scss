@@ -49,10 +49,14 @@
     left: 8rem;
     z-index: 5;
     .title {
-      @include clampCal(39, 60);
+      @include clampCal(49, 60);
       font-weight: 700;
       color: #fff;
       margin-bottom: 0.5em;
+      text-align: center;
+      br {
+        display: none;
+      }
     }
     .category-btn-list {
       display: flex;
@@ -212,7 +216,7 @@
       }
       .count-sub-txt {
         line-height: 1.5;
-        font-size: 18px;
+        font-size: 1.2em;
         margin: 50px 0;
       }
       .count-box {

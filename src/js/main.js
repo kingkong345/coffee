@@ -10,7 +10,7 @@ const categoryBox = new Swiper("#category .category-box .swiper", {
   spaceBetween: 50,
 
   breakpoints: {
-    640: {
+    270: {
       spaceBetween: 10,
     },
     1280: {
@@ -102,4 +102,7 @@ $(document).ready(function ($) {
       }
     }
   }
+});
+btnTop.on("click", function () {
+  gsap.to(window, { scrollTo: 0, duration: 1 });
 });
