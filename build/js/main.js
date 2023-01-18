@@ -42,17 +42,66 @@ $(".count-num").each(function () {
   );
 });
 
+/**
+ * menu 조작 이벤트 Start
+ */
 const header = $("#header");
 const gnb = $("#gnb");
 const btnTop = $(".btn-top");
+const depth01 = $("#gnb .depth01");
+const depth02 = $("#gnb .depth02");
+const btnAll = $("#header .btn-all");
 
-$(gnb).mouseenter(function () {
-  $(this).addClass("on");
+gnb.mouseenter(function () {
+  if (!$(this).hasClass("mobile")) {
+    $(this).addClass("on");
+  }
 });
-$(gnb).mouseleave(function () {
-  $(this).removeClass("on");
+gnb.mouseleave(function () {
+  if (!$(this).hasClass("mobile")) {
+    $(this).removeClass("on");
+  }
 });
 
+depth01.on("click", function (e) {
+  e.preventDefault();
+  const depth02 = $(this).next();
+  const siblings = $(this).parent().siblings().find(".depth02");
+  const siblingsDepth01 = $(this).parent().siblings().find(".depth01");
+  $(this).toggleClass("on");
+  siblingsDepth01.removeClass("on");
+  siblings.stop().slideUp();
+  depth02.stop().slideToggle();
+});
+
+btnAll.on("click", function (e) {
+  e.preventDefault();
+  gnb.toggleClass("on");
+  $(this).toggleClass("on");
+  depth02.stop().delay(250).slideUp();
+  $("#main").toggleClass("blur");
+});
+
+$(function () {
+  function checkWidth() {
+    if (window.innerWidth >= 1280) {
+      gnb.removeClass("mobile");
+      depth02.css("display", "");
+    } else {
+      gnb.addClass("mobile");
+    }
+  }
+
+  $(window).resize(function () {
+    checkWidth();
+  });
+
+  checkWidth();
+});
+
+/**
+ *
+ */
 $(function () {
   var lastScrollTop = 0,
     delta = 15;
