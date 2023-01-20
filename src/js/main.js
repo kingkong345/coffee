@@ -118,16 +118,18 @@ $(function () {
   });
 });
 
+btnTop.on("click", function () {
+  gsap.to(window, { scrollTo: 0, duration: 1 });
+});
+
+/**
+ * pop up 조작 이벤트
+ */
+
 $(document).ready(function ($) {
   const popup = $(".popup");
   const popupClose = $(".popup01 .btn-close");
   const onedayPopup = $(".popup01 .btn-oneday");
-
-  //최초 레이어팝업 노출
-  if (!$.cookie("testCookie")) {
-    popupShow();
-  }
-
   //레이어팝업 닫기 버튼 클릭
   popupClose.on("click", function () {
     layerPopupHide(0);
@@ -138,10 +140,6 @@ $(document).ready(function ($) {
     layerPopupHide(1);
   });
 
-  //레이어팝업 노출
-  function popupShow() {
-    popup.show();
-  }
   //레이어팝업 비노출
   function layerPopupHide(state) {
     popup.hide();
@@ -152,6 +150,29 @@ $(document).ready(function ($) {
     }
   }
 });
-btnTop.on("click", function () {
-  gsap.to(window, { scrollTo: 0, duration: 1 });
+
+const setCookie = function (name, cvalue, exdays) {
+  const todayDate = new Date();
+  todayDate.setTime(todayDate.getTime() + exdays * 24 * 60 * 60 * 1000);
+  const expires = "expires=" + todayDate.toUTCString(); // UTC기준의 시간에 exdays인자로 받은 값에 의해서 cookie가 설정 됩니다.
+  document.cookie = name + "=" + cvalue + "; " + expires;
+};
+
+const couponClose = function () {
+  if ($("input[name='chkbox']").is(":checked") == true) {
+    setCookie("close", "Y", 1); //기간( ex. 1은 하루, 7은 일주일)
+  }
+  $(".popup").hide();
+};
+
+$(document).ready(function () {
+  const cookiedata = document.cookie;
+  if (cookiedata.indexOf("close=Y") < 0) {
+    $(".popup").show();
+  } else {
+    $(".popup").hide();
+  }
+  $(".btn-oneday").click(function () {
+    couponClose();
+  });
 });
