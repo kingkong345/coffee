@@ -118,10 +118,6 @@ $(function () {
   });
 });
 
-btnTop.on("click", function () {
-  gsap.to(window, { scrollTo: 0, duration: 1 });
-});
-
 /**
  * pop up 조작 이벤트
  */
@@ -146,4 +142,11 @@ $(document).ready(function ($) {
   } else {
     popup.remove();
   }
+});
+
+/**
+ * top 버튼 조작 이벤트
+ */
+btnTop.on("click", function () {
+  gsap.to(window, { scrollTo: 0, duration: 1 });
 });

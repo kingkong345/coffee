@@ -206,6 +206,10 @@ button {
   text-align: center;
   width: 80px;
   z-index: 100;
+  .top,
+  span {
+    cursor: pointer;
+  }
   .top {
     margin-top: 80px;
     position: relative;
