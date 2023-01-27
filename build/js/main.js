@@ -149,5 +149,4 @@ $(document).ready(function ($) {
  */
 btnTop.on("click", function () {
   gsap.to(window, 1, { scrollTo: 0 });
-  return false;
 });
