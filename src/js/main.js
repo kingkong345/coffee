@@ -148,5 +148,5 @@ $(document).ready(function ($) {
  * top 버튼 조작 이벤트
  */
 btnTop.on("click", function () {
-  gsap.to(window, { duration: 2, scrollTo: 0 });
+  gsap.to(window, 1, { scrollTo: 0 });
 });
