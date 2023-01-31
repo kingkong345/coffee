@@ -26,7 +26,7 @@ const routes = {
     dest: "build/css",
   },
   lib: {
-    src: "src/lib/**/*.js",
+    src: ["src/lib/*.js", "src/lib/gsap/gsap.*.js", "src/lib/**/!(gsap).*.js"],
     dest: "build/js",
   },
   js: {
